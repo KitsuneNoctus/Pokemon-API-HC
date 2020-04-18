@@ -9,6 +9,8 @@
 import UIKit
 
 class PokedexTableViewCell: UITableViewCell {
+    @IBOutlet weak var pokemonSprite: UIImageView!
+    @IBOutlet weak var pokemonNameLabel: UILabel!
     
     
     

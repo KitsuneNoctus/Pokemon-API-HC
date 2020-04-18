@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var pokedexTable: UITableView!
     let pokeUrl = "https://pokeapi.co/api/v2/pokemon/?limit=20"
-    let limit: Int = 20
+    var limit: Int = 0
     
     var pokemon: [Pokemon] = []{
         didSet{
@@ -79,12 +79,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "pokeCell", for: indexPath) as! PokedexTableViewCell
+        let aPokemon = pokemon[indexPath.row]
+        cell.pokemonNameLabel.text = aPokemon.name
+        return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.section == tableView.numberOfSections - 1 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1{
-//            limit + 20
+            self.limit += 20
+            fetchPokemonName(url: "https://pokeapi.co/api/v2/pokemon/?limit=\(20 + limit)&offset=\(limit)")
         }
     }
     
