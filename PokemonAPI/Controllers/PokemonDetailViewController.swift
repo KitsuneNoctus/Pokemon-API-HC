@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PokemonDetailViewController.swift
 //  PokemonAPI
 //
 //  Created by Henry Calderon on 4/17/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PokemonDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-

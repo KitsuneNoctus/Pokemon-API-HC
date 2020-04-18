@@ -25,6 +25,28 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OGz-O6-GbI" id="L06-LA-6np">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokeballplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="2Eu-yU-HgV">
+                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="2Eu-yU-HgV" secondAttribute="height" multiplier="1:1" id="n7k-p9-m1V"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Pokemon Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fk-Zf-IOO">
+                                                    <rect key="frame" x="100" y="39.5" width="250" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6fk-Zf-IOO" secondAttribute="trailing" constant="10" id="9Zr-4a-unz"/>
+                                                <constraint firstItem="6fk-Zf-IOO" firstAttribute="leading" secondItem="2Eu-yU-HgV" secondAttribute="trailing" constant="10" id="9n7-ma-hpi"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Eu-yU-HgV" secondAttribute="bottom" constant="10" id="IWH-Vv-Dtn"/>
+                                                <constraint firstItem="6fk-Zf-IOO" firstAttribute="centerY" secondItem="L06-LA-6np" secondAttribute="centerY" id="afM-45-NIX"/>
+                                                <constraint firstItem="2Eu-yU-HgV" firstAttribute="leading" secondItem="L06-LA-6np" secondAttribute="leading" constant="10" id="m3E-ts-1jj"/>
+                                                <constraint firstItem="2Eu-yU-HgV" firstAttribute="top" secondItem="L06-LA-6np" secondAttribute="top" constant="10" id="qou-66-N0M"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -40,10 +62,28 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pokemon" id="3OT-Qc-hiJ"/>
+                    <connections>
+                        <outlet property="pokedexTable" destination="8O3-MM-lf6" id="xI7-LK-cak"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="137.18140929535232"/>
+        </scene>
+        <!--Pokemon Detail View Controller-->
+        <scene sceneID="7M9-WB-7dZ">
+            <objects>
+                <viewController id="7Bx-mL-R1m" customClass="PokemonDetailViewController" customModule="PokemonAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zmO-Ij-8XB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="cRs-uA-9Mt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAp-dN-0eJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nDc-KI-0nM">
@@ -64,4 +104,7 @@
             <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pokeballplaceholder" width="3000" height="3000"/>
+    </resources>
 </document>
